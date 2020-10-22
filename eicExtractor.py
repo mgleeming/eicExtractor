@@ -21,7 +21,7 @@ parser.add_argument('eicTarget',
 
 parser.add_argument('--eicWidth',
                     default = DEFAULT_EXTRACTION_WIDTH,
-                    type = int,
+                    type = float,
                     help = 'Width (in m/z) used to produce EIC plots'
                     )
 
