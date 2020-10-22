@@ -37,10 +37,15 @@ def getEICData(options):
     print('EIC target LL: %s' %targetLL)
     print('EIC target HL: %s' %targetHL)
 
-    ofx = open('EIC_%s_%s.txt' %(
-        options.eicTarget,
-        options.mzmlFile.split('.')[0]
-    ), 'wt')
+    outFile = os.path.join(
+        os.path.dirname(options.mzmlFile),
+        'EIC_%s_%s.txt' %(
+            options.eicTarget,
+            os.path.basename(options.mzmlFile)
+        )
+    )
+
+    ofx = open(outFile, 'wt')
 
     ofx.write('#RT\tIntensity\n')
 
